@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body
+{
+  background-color:silver;
+}
+label
+{
+font-family: sanserif;
+font-weight:800;
+}
+button
+{
+  background-color: none;
+  color: #ff8260;
+  border: 2px solid;
+  padding: 1em 2em;
+  font-size: 1em;
+  transition: all 0.25s
+  }
+
+button:hover
+{
+border-color: #f1ff5c;
+color: black;
+box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c ;
+ transform: translate(-0.25em);
+  cursor:pointer;
+}
+  </style>
+  <script>
+    
+function saveProfile(event) {
+  event.preventDefault();
+  
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const age = document.getElementById('age').value;
+  
+  const profileData = {
+    name: name,
+    email: email
+  };
+  
+  localStorage.setItem('profile', JSON.stringify(profileData));
+}
+
+const profileForm = document.getElementById('profileForm');
+profileForm.addEventListener('submit',saveProfile);
+    </script>
+
+<head>
+    <title>Edit Patient Profile</title>
+</head>
+
+<body>
+  <center>
+    <h1><u>Edit Patient Profile</u></h1>
+    <form id="profile">
+        <label for="full_name">Full Name:</label>
+        <input type="text" id="name" name="full_name" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <laber for="gender">
+          <input type="radio" id="gender" name="gender">Male
+          <input type="radio" id="gender"
+                 name="gender">Female
+          <input type="radio" id="gender"
+                 name="gender">Other
+          </label>
+          <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+      
+<label for="phone">Phone:</label>
+        <input type="number" id="phone" name="phone" required><br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address"required></textarea><br><br>
+
+        <label for="medical_history">Medical History:</label>
+        <textarea id="medical_history" name="medical_history" required></textarea><br><br>
+
+  
+    </form>
+        <button > Update Profile</button>
+  </center>
+</body>
+
+</html>
+
