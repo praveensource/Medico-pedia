@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medico-Pedia</title>
+</head>
+<style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        header {
+            text-align: center;
+            background-color: #f70e0e;
+            color: #b13636;
+            padding: 10px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h2 {
+            font-style: italic;
+            color: #4CAF50;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        ol {
+            margin-left: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover{
+            color: #4CAF50;
+        }
+
+         .medicine {
+            margin-bottom: 30px;
+            border: 2px solid #007bff;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+<body>
+  <header>
+    <h1>Medicine Tablet Interface</h1>
+  </header>
+  <main>
+    <div class = "Angiotensin" >
+    <label for="Angiotensin">
+      <img src="data:image/jpeg;base64,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" alt="Medicine Image">
+      <h2>Angiotensin</h2>
+      <p>Description of the medicine and its uses.
+        <p> Are a group of pharmaceuticals that bind to and inhibit the angiotensin II receptor type 1 </p>
+        <p>block the arteriolar contraction and sodium retention effects of renin–angiotensin system.</p>
+      <ol>
+        <li>treatment of hypertension.</li>
+        <li>Used in treatment of congestive heart failure.</li>
+      </ol>
+      </p>
+      <p>Dosage: 1 tablet per day.</p>
+      For more information visit:
+      <a href =  "https://en.wikipedia.org/wiki/Angiotensin_II_receptor_blocker">click me!</a>
+        </label>
+    </div>
+    </main>
+    
+</body>
+</html>
