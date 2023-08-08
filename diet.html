@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    p {
+      padding-left: auto;
+    }
+    header {
+      text-align: center;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    section {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 10px 0;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      width: 70px;
+      padding: 5px;
+      margin-right: 5px;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    /* Customize the styles as per your preference */
+  </style>
+  <body>
+    <header>
+      <h1>Fitness Tracker</h1>
+    </header>
+    <section>
+      <h2>Blood Pressure</h2>
+
+      <label for="systolicInput">Systolic:</label>
+      <input type="number" id="systolicInput" />
+      <label for="diastolicInput">Diastolic:</label>
+      <input type="number" id="diastolicInput" />
+      <button onclick="updateBloodPressure()">Update</button>
+      <p>
+        Normal Systolic : 120mmHg
+        <br />
+        Normal diastolic : 80mmHg
+      </p>
+      <p>Systolic: <span id="systolic">120</span> mmHg</p>
+      <p>Diastolic: <span id="diastolic">80</span> mmHg</p>
+    </section>
+    <section>
+      <h2>Heart Rate</h2>
+      <label for="restingRateInput">Resting Rate:</label>
+      <input type="number" id="restingRateInput" />
+      <label for="maxRateInput">Max Rate:</label>
+      <input type="number" id="maxRateInput" />
+      <button onclick="updateHeartRate()">Update</button>
+      <p>
+        Normal resting rate: 70mmHg
+        <br />
+        Normal resting rate : 180mmHg
+      </p>
+      <p>Resting Rate: <span id="restingRate">70</span> bpm</p>
+      <p>Max Rate: <span id="maxRate">180</span> bpm</p>
+    </section>
+    <!-- Add other staff (e.g., weight, steps, etc.) here -->
+
+    <script>
+      function updateBloodPressure() {
+        const systolicInput = document.getElementById("systolicInput");
+        const diastolicInput = document.getElementById("diastolicInput");
+        const systolicSpan = document.getElementById("systolic");
+        const diastolicSpan = document.getElementById("diastolic");
+
+        const systolicValue = systolicInput.value;
+        const diastolicValue = diastolicInput.value;
+
+        if (isValidValue(systolicValue) && isValidValue(diastolicValue)) {
+          systolicSpan.textContent = systolicValue;
+          diastolicSpan.textContent = diastolicValue;
+        } else {
+          alert("Please enter valid blood pressure values.");
+        }
+      }
+
+      function updateHeartRate() {
+        const restingRateInput = document.getElementById("restingRateInput");
+        const maxRateInput = document.getElementById("maxRateInput");
+        const restingRateSpan = document.getElementById("restingRate");
+        const maxRateSpan = document.getElementById("maxRate");
+
+        const restingRateValue = restingRateInput.value;
+        const maxRateValue = maxRateInput.value;
+
+        if (isValidValue(restingRateValue) && isValidValue(maxRateValue)) {
+          restingRateSpan.textContent = restingRateValue;
+          maxRateSpan.textContent = maxRateValue;
+        } else {
+          alert("Please enter valid heart rate values.");
+        }
+      }
+
+      function isValidValue(value) {
+        return !isNaN(value) && value.trim() !== "";
+      }
+    </script>
+  </body>
+</html>
